@@ -1,4 +1,4 @@
-# [DevDocs](https://devdocs.io) — API Documentation Browser
+# [DevDocs](https://devdocs.io) — API Documentation Browser For
 
 DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.
 
