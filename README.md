@@ -1,4 +1,4 @@
-# [DevDocs](https://devdocs.io) — API Documentation Browser For
+# [DevDocs](https://devdocs.io) — API Documentation Browser
 
 DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more.
 
@@ -23,6 +23,20 @@ Unless you wish to contribute to the project, we recommend using the hosted vers
 DevDocs is made of two pieces: a Ruby scraper that generates the documentation and metadata, and a JavaScript app powered by a small Sinatra app.
 
 DevDocs requires Ruby 3.2.1, libcurl, and a JavaScript runtime supported by [ExecJS](https://github.com/rails/execjs#readme) (included in OS X and Windows; [Node.js](https://nodejs.org/en/) on Linux). Once you have these installed, run the following commands:
+
+After do some research, I found it works in AWS linux (gcc (GCC) 7.3.1 20180712 (Red Hat 7.3.1-15)) and Ubuntu (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0) smoothly, but CentOS 7 will always failed. (gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-44))
+So I guess probably it’s relative with the old stock gcc version of CentOS 7, luckily new gcc can be installed in CentOS 7 easily.
+
+```sh
+yum list | grep gcc
+yum install centos-release-scl-rh
+yum install llvm-toolset-7-clang
+yum install centos-release-scl
+yum install devtoolset-7-gcc.x86_64 && yum install devtoolset-7-gcc-c++.x86_64
+# or yum install devtoolset-7-toolchain
+scl enable devtoolset-7 bash
+rbenv install 3.1.3 # now can successully install ruby!
+```
 
 ```sh
 git clone https://github.com/freeCodeCamp/devdocs.git && cd devdocs
